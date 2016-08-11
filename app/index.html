@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Veggie PSD Template</title>
 
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700,300italic,400italic' rel='stylesheet' type='text/css'>
 	
 	<link rel="stylesheet" href="css/materialize.min.css">
@@ -13,10 +14,66 @@
 </head>
 <body>
 	
-	
+	<header>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
+				<ul id="nav" class="right hide-on-med-and-down">
+					<li class="active-nav"><a href="#home">home</a></li>
+					<li><a href="#specials">specials</a></li>
+					<li><a href="#about">about</a></li>
+					<li><a href="#menu">menu</a></li>
+					<li><a href="#contact">contact</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-nav">
+					<li><a href="#home">home</a></li>
+					<li><a href="#specials">specials</a></li>
+					<li><a href="#about">about</a></li>
+					<li><a href="#menu">menu</a></li>
+					<li><a href="#contact">contact</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col s6 offset-s6 m5 offset-m7">
+					<h2>
+						Veggies es bonus vobis,<br>proinde vos postulo essum.
+					</h2>
+					<div class="col s12">
+						<img src="images/img2.jpg" alt="" class="responsive-img">
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="sub-header">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 m6 l4">
+					<img src="images/img_03.jpg" alt="" class="responsive-img">
+					<!-- change jpg to gif -->
+					<h4>Turnip Greens</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat. </p>
+				</div>
+				<div class="col s12 m6 l4">
+					
+				</div>
+				<div class="col s12 m6 l4">
+					
+				</div>
+			</div>
+		</div>
+	</section>
 
 
-	<script src="js/jquery-3.1.0.js"></script>
+	<script src="js/jquery-3.1.0.min.js"></script>
 	<script src="js/materialize.min.js"></script>
+	<script>
+		$(function(){
+			$('.button-collapse').sideNav();
+		})
+	</script>
 </body>
 </html>
