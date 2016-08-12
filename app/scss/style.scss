@@ -1,10 +1,31 @@
 body {
 	font-family: 'Merriweather', serif;
 	font-size: 15px;
+	color: #3c3c3c;
 }
 .center-text {
 	text-align: center;
 }
+.pattern {
+	width: 100%;
+	max-height: 35px;
+}
+.flex-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+$tablet: "min-width: 600px";
+$desktop: "min-width: 960px";
+$phone: "max-width: 600px";
+
+
+// ------------------
+
+
 header {
 	background: url('../images/img1.jpg') no-repeat;
 	background-size: 100% 100%;
@@ -14,24 +35,24 @@ header {
 		background-color: transparent;
 		box-shadow: none;
 		ul {
-			color: black;
+			color: #3c3c3c;
 			margin-right: 5%;
 			text-transform: capitalize;
 			li {
 				&.active-nav {
-					border: 1px solid #686868;
+					border: 1px solid #6e6e6e;
 				}
 				a {
-					color: black;
 					@extend .center-text;
 					padding: 2px 25px;
 					font-size: 18px;
+					color: #3c3c3c;
 				}
 			}
 		}
 		a.button-collapse {
-			color: black;
 			margin-right: 30px;
+			color: #3c3c3c;
 		}
 	}
 	.container {
@@ -40,7 +61,7 @@ header {
 			text-align: center;
 			font-weight: 300;
 			margin-top: 80px;
-			@media(min-width: 960px){
+			@media($desktop){
 				margin-top: 130px;
 			}
 		}
@@ -53,11 +74,128 @@ header {
 .sub-header {
 	background: url('../images/sub-header-bg.jpg');
 	background-size: 100% 100%;
+	.container-full-width {
+		width: 95%;
+	}
 	.row {
+		padding-bottom: 65px;
 		.col {
-			img {
-				// flexbox ??
+			@extend .center-text;
+			@media($phone) {
+				margin-top: 30px;
 			}
+			img {
+				margin: 20px auto;
+				display: block;
+				@media($tablet){
+					margin: 60px auto 30px;
+				}
+			}
+			h4 {
+				font-size: 18px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			p {
+				font-size: 14px;
+				font-weight: 300;
+			}
+		}
+	}
+}
+
+.specials {
+	@media($desktop) {
+		margin-top: 70px;
+	}
+	h1 {
+		@extend .center-text;
+		font-size: 40px;
+		font-weight: 300;
+	}
+	.pattern {
+		padding: 0 18%;
+	}
+	.tiles-container.row {
+		margin-top: 50px;
+		margin-bottom: 0;
+		&:last-child {
+			margin-top: 0;
+			margin-bottom: 50px;
+			@media($tablet){
+				margin-bottom: 100px;
+			}
+		}
+	}
+	.tile.col {
+		// min-height: 170px;
+		// max-width: 248px;		
+		color: #383838;
+		padding: 0;
+		@extend .flex-center;
+		background-color: #f8f8f8;
+		@extend .center-text;
+		h4 {
+			font-weight: bold;
+			font-size: 15px;
+			position: relative;
+			width: 100%;
+			&:before {
+				content: "";
+				position: absolute;
+				left: 50%;
+				bottom: -0.5em;
+				height: 1px;
+				width: 40%;
+				border-bottom: 1px solid #383838;
+				transform: translateX(-50%);
+			}
+		}
+		img {
+			min-height: 170px;
+			width: 100%;
+		}
+		.description {
+			margin-top: 0.6em;
+			line-height: 1.5em;
+			font-size: 13px;
+			font-weight: 300;
+		}
+		.price {
+			font-weight: bold;
+			font-size: 15px;
+		}
+	}
+}
+
+.about-us {
+	background-color: #eeefef;
+	@media($tablet){
+		padding-bottom: 30px;
+	}
+	.col {
+		@extend .flex-center;
+		h4 {
+			margin-top: 2em;
+			font-size: 40px;
+			font-weight: 300;
+			@extend .center-text;
+		}
+		p {
+			font-size: 24px;
+			font-weight: 300;
+			@extend .center-text;
+		}
+		.pattern {
+			padding: 0 30%;
+		}
+	}
+	.description {
+		padding: 0 10%;
+	}
+	.description, .container-img {
+		@media($tablet){
+			min-height: 600px;
 		}
 	}
 }
