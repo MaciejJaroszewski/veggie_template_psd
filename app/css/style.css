@@ -3,18 +3,34 @@ body {
   font-size: 15px;
   color: #3c3c3c; }
 
-.center-text, header nav ul li a, .sub-header .row .col, .specials h1, .specials .tile.col, .about-us .col h4, .about-us .col p {
+.center-text, header nav ul li a, .sub-header .row .col, .specials h1, .specials .tile.col, .about-us .col h4, .about-us .col p, .menu h4, .menu ul.categories li, .contact h4, .contact .contact-form .send-button {
   text-align: center; }
 
 .pattern {
   width: 100%;
   max-height: 35px; }
 
-.flex-center, .specials .tile.col, .about-us .col {
+.flex-center, .specials .tile.col, .about-us .col, .menu ul.categories {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+
+.transition, .menu ul.categories li, .contact .contact-form .send-button {
+  transition: 200ms linear; }
+
+.pattern-after:after, .contact h4:after {
+  width: 100%;
+  max-height: 35px;
+  content: "";
+  display: block;
+  margin: 10px auto 30px;
+  width: 253px;
+  background: url("../images/pattern.png");
+  height: 34px; }
+  @media (min-width: 600px) {
+    .pattern-after:after, .contact h4:after {
+      margin: 20px auto 40px; } }
 
 header {
   background: url("../images/img1.jpg") no-repeat;
@@ -142,3 +158,118 @@ header {
   @media (min-width: 600px) {
     .about-us .description, .about-us .container-img {
       min-height: 600px; } }
+
+.menu {
+  padding-top: 30px; }
+  @media (min-width: 600px) {
+    .menu {
+      padding-top: 65px; } }
+  .menu .row {
+    margin-bottom: 40px; }
+    @media (min-width: 960px) {
+      .menu .row {
+        margin-bottom: 70px; } }
+  .menu .col-wrapper .col {
+    padding: 0 40px 0 40px; }
+  .menu h4 {
+    font-size: 40px;
+    font-weight: 300; }
+    .menu h4:after {
+      content: "";
+      display: block;
+      margin: 20px auto 30px;
+      width: 253px;
+      background: url("../images/pattern.png");
+      height: 34px; }
+      @media (min-width: 600px) {
+        .menu h4:after {
+          margin: 30px auto 50px; } }
+  .menu ul.categories {
+    flex-direction: column;
+    margin-bottom: 30px; }
+    @media (min-width: 600px) {
+      .menu ul.categories {
+        flex-direction: row; } }
+    @media (min-width: 600px) {
+      .menu ul.categories {
+        margin-bottom: 65px; } }
+    .menu ul.categories li {
+      padding: 15px 25px;
+      cursor: pointer;
+      width: 150px; }
+      .menu ul.categories li:hover {
+        background-color: lightgray; }
+      .menu ul.categories li.active {
+        border: 1px solid #3c3c3c; }
+  .menu ul.dishes {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin-bottom: 2em; }
+    .menu ul.dishes li.dish:before {
+      float: left;
+      width: 0;
+      white-space: nowrap;
+      content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
+      font-weight: 300;
+      letter-spacing: -1px; }
+    .menu ul.dishes .dish-title {
+      font-size: 16px;
+      font-weight: 300;
+      background: white;
+      padding-right: 0.33em; }
+    .menu ul.dishes .dish-price {
+      float: right;
+      background: white;
+      padding-left: 0.33em;
+      font-size: 16px;
+      font-weight: 300; }
+    .menu ul.dishes .ingredients {
+      font-size: 12px;
+      font-weight: 300;
+      font-style: italic;
+      margin-top: -0.5em; }
+
+.contact {
+  position: relative;
+  padding: 20px;
+  background: url("../images/footer_bg_02.jpg") no-repeat;
+  background-size: 200% 100%;
+  min-height: 800px;
+  background-position: 70% 0%; }
+  @media (min-width: 600px) {
+    .contact {
+      padding: 40px; } }
+  @media (min-width: 600px) {
+    .contact {
+      background-position: 0% 0%;
+      background-size: 100% 100%; } }
+  .contact h4 {
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: 300; }
+  .contact .column {
+    padding: 0 30px;
+    margin-bottom: 3.5em; }
+    .contact .column span.title {
+      font-size: 16px;
+      text-transform: uppercase; }
+    .contact .column p.adrress {
+      font-size: 14px; }
+  .contact .contact-form {
+    padding-left: 2em; }
+    .contact .contact-form h5 {
+      padding-left: 3.3em;
+      margin-bottom: 1.5em;
+      font-size: 18px;
+      text-transform: uppercase; }
+    .contact .contact-form label {
+      font-size: 16px;
+      font-style: italic; }
+    .contact .contact-form .send-button {
+      padding: 15px 25px;
+      margin: 40px auto 0;
+      border: 1px solid #3c3c3c;
+      max-width: 100px;
+      cursor: pointer; }
+      .contact .contact-form .send-button:hover {
+        background-color: lightgray; }

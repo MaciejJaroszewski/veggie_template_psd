@@ -1,3 +1,7 @@
+$tablet: "min-width: 600px";
+$desktop: "min-width: 960px";
+$phone: "max-width: 600px";
+
 body {
 	font-family: 'Merriweather', serif;
 	font-size: 15px;
@@ -16,11 +20,26 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+.transition {
+	transition: 200ms linear;
+}
+.pattern-after {
+	&:after {
+		width: 100%;
+		max-height: 35px;
+		content: "";
+		display: block;
+		margin: 10px auto 30px;
+		@media($tablet){
+			margin: 20px auto 40px;
+		}
+		width: 253px;
+		background: url('../images/pattern.png');
+		height: 34px;
+	}
+}
 
 
-$tablet: "min-width: 600px";
-$desktop: "min-width: 960px";
-$phone: "max-width: 600px";
 
 
 // ------------------
@@ -196,6 +215,161 @@ header {
 	.description, .container-img {
 		@media($tablet){
 			min-height: 600px;
+		}
+	}
+}
+
+.menu {
+	padding-top: 30px;
+	@media($tablet) {
+		padding-top: 65px;
+	}
+	.row {
+		margin-bottom: 40px;
+		@media($desktop){
+			margin-bottom: 70px;
+		}
+	}
+	.col-wrapper {
+		.col {
+			padding: 0 40px 0 40px;
+		}
+	}
+	
+	h4 {
+		@extend .center-text;
+		font-size: 40px;
+		font-weight: 300;
+		&:after {
+			content: "";
+			display: block;
+			margin: 20px auto 30px;
+			@media($tablet){
+				margin: 30px auto 50px;
+			}
+			width: 253px;
+			background: url('../images/pattern.png');
+			height: 34px;
+		}
+	}
+	ul.categories {
+		@extend .flex-center;
+		flex-direction: column;
+		@media($tablet){
+			flex-direction: row;
+		}
+		margin-bottom: 30px;
+		@media($tablet){
+			margin-bottom: 65px;
+		}
+		li {
+			padding: 15px 25px;
+			cursor: pointer;
+			width: 150px;
+			@extend .transition;
+			@extend .center-text;
+			&:hover {
+				background-color: lightgray;
+			}
+			&.active {
+				border: 1px solid #3c3c3c;
+			}
+		}
+	}
+	ul.dishes {
+		max-width: 100%;
+		overflow-x: hidden;
+		margin-bottom: 2em;
+		li.dish:before {
+			float: left;
+			width: 0;
+			white-space: nowrap;
+			content: ". . . . . . . . . . . . . . . . . . . . "
+					". . . . . . . . . . . . . . . . . . . . "
+					". . . . . . . . . . . . . . . . . . . . "
+					". . . . . . . . . . . . . . . . . . . . "
+					". . . . . . . . . . . . . . . . . . . . ";
+					font-weight: 300;
+					letter-spacing: -1px;
+		}
+		.dish-title {
+			font-size: 16px;
+			font-weight: 300;
+			background: white;
+			padding-right: 0.33em;
+		}
+		.dish-price {
+			float: right;
+			background: white;
+			padding-left: 0.33em;
+			font-size: 16px;
+			font-weight: 300;
+		}
+		.ingredients {
+			font-size: 12px;
+			font-weight: 300;
+			font-style: italic;
+			margin-top: -0.5em;
+		}
+	}
+}
+
+.contact {
+	position: relative;
+	padding: 20px;
+	@media($tablet){
+		padding: 40px;
+	}
+	background: url('../images/footer_bg_02.jpg') no-repeat;
+	background-size: 200% 100%;
+	min-height: 800px;
+	background-position: 70% 0%;
+	@media($tablet){
+		background-position: 0% 0%;
+		background-size: 100% 100%;
+	}
+	
+	h4 {
+		margin-bottom: 10px;
+		font-size: 40px;
+		font-weight: 300;
+		@extend .pattern-after;
+		@extend .center-text;
+	}
+	.column {
+		padding: 0 30px;
+		margin-bottom: 3.5em;
+		span.title {
+			font-size: 16px;
+			text-transform: uppercase;
+		}
+		p.adrress {
+			font-size: 14px;
+		}
+	}
+	.contact-form {
+		padding-left: 2em;
+		h5 {
+			padding-left: 3.3em;
+			margin-bottom: 1.5em;
+			font-size: 18px;
+			text-transform: uppercase;
+		}
+		label {
+			font-size: 16px;
+			font-style: italic;
+		}
+		.send-button {
+			padding: 15px 25px;
+			margin: 40px auto 0;
+			border: 1px solid #3c3c3c;
+			max-width: 100px;
+			@extend .center-text;
+			cursor: pointer;
+			@extend .transition;
+			&:hover {
+				background-color: lightgray;
+			}
 		}
 	}
 }
