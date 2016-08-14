@@ -14,7 +14,7 @@
 </head>
 <body>
 	
-	<header>
+	<header id="home">
 		<nav>
 			<div class="nav-wrapper">
 				<a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
@@ -75,7 +75,7 @@
 		</div>
 	</section>
 
-	<section class="specials">
+	<section class="specials" id="specials">
 		<div class="container">
 			<div class="row">
 				<div class="col s12 m6 offset-m3">
@@ -141,7 +141,7 @@
 		</div>
 	</section>
 
-	<section class="about-us">
+	<section class="about-us" id="about">
 		<div class="row">
 			<div class="col s12 m6 description">
 				<div class="col s12">
@@ -159,7 +159,7 @@
 		</div>
 	</section>
 
-	<section class="menu">
+	<section class="menu" id="menu">
 		<!-- <div class="container"> -->
 			<div class="row">
 				<h4>Menu</h4>
@@ -235,15 +235,15 @@
 		<!-- </div> -->
 	</section>
 
-	<section class="contact">
+	<section class="contact" id="contact">
 		<div class="row">
 			<div class="col s12 m6 offset-m6">
 				<h4>Contact</h4>
-				<div class="col s12 m5 offset-m1 column">
+				<div class="col s12 m11 offset-m1 l5 offset-l1 column">
 					<span class="title">Veggie</span>
 					<p class="adrress">3428 Magnolia Avenue<br>Hackettstown, NJ 07840</p>
 				</div>
-				<div class="col s12 m5 offset-m1 column">
+				<div class="col s12 m11 offset-m1 l5 offset-l1 column">
 					<span class="title">Reservations</span>
 					<p class="adrress">reservations@vegggie.com<br>+48 202-555-0114</p>
 				</div>
@@ -253,11 +253,11 @@
 					<form class="col s12">
 						<h5>Contact form</h5>
 						<div class="row">
-							<div class="input-field col s5 offset-s1">
+							<div class="input-field col s11 offset-s1 l5 offset-l1">
 								<input type="text" id="form-name" class="validate">
 								<label for="form-name"> Name</label>
 							</div>
-							<div class="input-field col s5 offset-s1">
+							<div class="input-field col s11 offset-s1 l5 offset-l1">
 								<input type="email" id="email" class="validate">
 								<label for="email"> Email</label>
 							</div>
@@ -273,13 +273,23 @@
 				</div>
 			</div>
 		</div>
+
 		<footer>
-		
+			<div class="copyrights">
+				<div class="center-text">Copyright 2015 ©  by Anna Dadej, coded by 
+					<a href="mjaroszewski.pl/portfolio" class="portfolio"> Maciej Jaroszewski</a>
+				</div>
+			</div>
+			<div class="socials">
+				<div class="social-facebook">
+					<a href="#"><img src="images/social_01.png" alt=""></a>
+				</div>
+				<div class="social-instagram">
+					<a href="#"><img src="images/social_05.png" alt=""></a>
+				</div>
+			</div>
 		</footer>
 	</section>
-
-	
-
 
 
 	<script src="js/jquery-3.1.0.min.js"></script>
@@ -288,7 +298,6 @@
 		$(function(){
 			$('.button-collapse').sideNav();
 
-
 			var tile = $('.flow-tile');
 			var subTile = $('.sub-tile');
 
@@ -296,12 +305,33 @@
 				subTile.innerHeight(tile.innerHeight());
 				console.log(subTile.innerHeight());
 			}
+			function unactiveLinks(list, classToRemove){
+				$(list).each(function(){
+					$(this).removeClass(classToRemove);
+				});
+			}
+			function activeLink(that, activeClass){
+				that.addClass(activeClass);
+			}
 			$(window).resize(function(){
 				setTileHeight();
 			});
 			$(document).ready(function(){
 				setTileHeight();
-			})
+				$('#nav li').click(function(){
+					unactiveLinks('#nav li', 'active-nav');
+					activeLink($(this), 'active-nav');
+				});
+				$('#mobile-nav li').click(function(){
+					unactiveLinks('#mobile-nav li', 'active-nav');
+					activeLink($(this), 'active-nav');
+				});
+				$('ul.categories li').click(function(){
+					unactiveLinks('ul.categories li', 'active');
+					activeLink($(this), 'active');
+				});
+
+			});
 		});
 	</script>
 </body>

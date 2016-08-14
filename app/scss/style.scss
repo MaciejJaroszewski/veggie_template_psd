@@ -6,6 +6,7 @@ body {
 	font-family: 'Merriweather', serif;
 	font-size: 15px;
 	color: #3c3c3c;
+	padding-bottom: -80px;
 }
 .center-text {
 	text-align: center;
@@ -69,6 +70,12 @@ header {
 				}
 			}
 		}
+		ul#mobile-nav {
+			li.active-nav {
+				background-color: lighten(lightgray, 12%);
+				border: none;
+			}
+		}
 		a.button-collapse {
 			margin-right: 30px;
 			color: #3c3c3c;
@@ -125,7 +132,7 @@ header {
 
 .specials {
 	@media($desktop) {
-		margin-top: 70px;
+		padding-top: 70px;
 	}
 	h1 {
 		@extend .center-text;
@@ -318,11 +325,11 @@ header {
 	position: relative;
 	padding: 20px;
 	@media($tablet){
-		padding: 40px;
+		padding: 40px 40px 0;
 	}
 	background: url('../images/footer_bg_02.jpg') no-repeat;
 	background-size: 200% 100%;
-	min-height: 800px;
+	min-height: 730px;
 	background-position: 70% 0%;
 	@media($tablet){
 		background-position: 0% 0%;
@@ -337,6 +344,10 @@ header {
 		@extend .center-text;
 	}
 	.column {
+		text-align: right;
+		@media($tablet){
+			text-align: left;
+		}
 		padding: 0 30px;
 		margin-bottom: 3.5em;
 		span.title {
@@ -349,19 +360,40 @@ header {
 	}
 	.contact-form {
 		padding-left: 2em;
+		.input-field {
+			margin-top: 3.7rem;
+			@media($desktop){
+				margin-top: 1rem;
+			}
+		}
 		h5 {
-			padding-left: 3.3em;
 			margin-bottom: 1.5em;
 			font-size: 18px;
 			text-transform: uppercase;
+			text-align: center;
+			@media($desktop){
+				padding-left: 3.3em;
+				text-align: left;
+			}
 		}
+
 		label {
 			font-size: 16px;
 			font-style: italic;
+			color: #3c3c3c;
+			text-align: center;
+			left: 0;
+			@media($desktop){
+				text-align: left;
+				left: 1.75rem;
+			}
 		}
 		.send-button {
 			padding: 15px 25px;
-			margin: 40px auto 0;
+			margin: 40px auto 80px;
+			@media($tablet){
+				margin-bottom: 20px;
+			}
 			border: 1px solid #3c3c3c;
 			max-width: 100px;
 			@extend .center-text;
@@ -369,6 +401,67 @@ header {
 			@extend .transition;
 			&:hover {
 				background-color: lightgray;
+			}
+		}
+		// changing default materialize.css colors
+		.input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label {
+			color: #3c3c3c;
+			font-size: 0.8rem;
+		}
+		.input-field input[type=text]:focus, .input-field input[type=email]:focus {
+			border-bottom-color: #000;
+			box-shadow: 0 1px 0 0 #000;
+		}
+		.input-field input[type=text].valid, .input-field input[type=email].valid {
+			border-bottom-color: #000;
+			box-shadow: 0 1px 0 0 #000;
+		}
+		.input-field input[type=text].invalid, .input-field input[type=email].invalid {
+			border-bottom-color: red;
+			box-shadow: 0 1px 0 0 #000;
+		}
+	}
+}
+
+footer {
+	position: relative;
+	padding-bottom: 35px;
+	.copyrights {
+		padding-bottom: 50px;
+		@media($desktop){
+			padding-bottom: 0;
+		}
+		.center-text {
+			a {
+				color: red;
+			}
+		}
+	}
+	.socials {
+		position: absolute;
+		bottom: 0;
+		right: 50%;
+		transform: translateX(50%);
+		@media($desktop){
+			right: 100px;
+			bottom: 35px;
+			// transform: translateX(50%);
+		}
+		div {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			border: 1px solid #3c3c3c;
+			&:first-child {
+				margin-right: 12px;
+			}
+			// img {
+			// 	margin: 0 auto;
+			// }
+			a {
+				img {
+					padding: 12px;
+				}
 			}
 		}
 	}

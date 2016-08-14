@@ -1,7 +1,8 @@
 body {
   font-family: 'Merriweather', serif;
   font-size: 15px;
-  color: #3c3c3c; }
+  color: #3c3c3c;
+  padding-bottom: -80px; }
 
 .center-text, header nav ul li a, .sub-header .row .col, .specials h1, .specials .tile.col, .about-us .col h4, .about-us .col p, .menu h4, .menu ul.categories li, .contact h4, .contact .contact-form .send-button {
   text-align: center; }
@@ -50,6 +51,9 @@ header {
         padding: 2px 25px;
         font-size: 18px;
         color: #3c3c3c; }
+    header nav ul#mobile-nav li.active-nav {
+      background-color: #f2f2f2;
+      border: none; }
     header nav a.button-collapse {
       margin-right: 30px;
       color: #3c3c3c; }
@@ -90,7 +94,7 @@ header {
 
 @media (min-width: 960px) {
   .specials {
-    margin-top: 70px; } }
+    padding-top: 70px; } }
 
 .specials h1 {
   font-size: 40px;
@@ -234,11 +238,11 @@ header {
   padding: 20px;
   background: url("../images/footer_bg_02.jpg") no-repeat;
   background-size: 200% 100%;
-  min-height: 800px;
+  min-height: 730px;
   background-position: 70% 0%; }
   @media (min-width: 600px) {
     .contact {
-      padding: 40px; } }
+      padding: 40px 40px 0; } }
   @media (min-width: 600px) {
     .contact {
       background-position: 0% 0%;
@@ -248,8 +252,12 @@ header {
     font-size: 40px;
     font-weight: 300; }
   .contact .column {
+    text-align: right;
     padding: 0 30px;
     margin-bottom: 3.5em; }
+    @media (min-width: 600px) {
+      .contact .column {
+        text-align: left; } }
     .contact .column span.title {
       font-size: 16px;
       text-transform: uppercase; }
@@ -257,19 +265,79 @@ header {
       font-size: 14px; }
   .contact .contact-form {
     padding-left: 2em; }
+    .contact .contact-form .input-field {
+      margin-top: 3.7rem; }
+      @media (min-width: 960px) {
+        .contact .contact-form .input-field {
+          margin-top: 1rem; } }
     .contact .contact-form h5 {
-      padding-left: 3.3em;
       margin-bottom: 1.5em;
       font-size: 18px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      text-align: center; }
+      @media (min-width: 960px) {
+        .contact .contact-form h5 {
+          padding-left: 3.3em;
+          text-align: left; } }
     .contact .contact-form label {
       font-size: 16px;
-      font-style: italic; }
+      font-style: italic;
+      color: #3c3c3c;
+      text-align: center;
+      left: 0; }
+      @media (min-width: 960px) {
+        .contact .contact-form label {
+          text-align: left;
+          left: 1.75rem; } }
     .contact .contact-form .send-button {
       padding: 15px 25px;
-      margin: 40px auto 0;
+      margin: 40px auto 80px;
       border: 1px solid #3c3c3c;
       max-width: 100px;
       cursor: pointer; }
+      @media (min-width: 600px) {
+        .contact .contact-form .send-button {
+          margin-bottom: 20px; } }
       .contact .contact-form .send-button:hover {
         background-color: lightgray; }
+    .contact .contact-form .input-field input[type=text]:focus + label, .contact .contact-form .input-field input[type=email]:focus + label {
+      color: #3c3c3c;
+      font-size: 0.8rem; }
+    .contact .contact-form .input-field input[type=text]:focus, .contact .contact-form .input-field input[type=email]:focus {
+      border-bottom-color: #000;
+      box-shadow: 0 1px 0 0 #000; }
+    .contact .contact-form .input-field input[type=text].valid, .contact .contact-form .input-field input[type=email].valid {
+      border-bottom-color: #000;
+      box-shadow: 0 1px 0 0 #000; }
+    .contact .contact-form .input-field input[type=text].invalid, .contact .contact-form .input-field input[type=email].invalid {
+      border-bottom-color: red;
+      box-shadow: 0 1px 0 0 #000; }
+
+footer {
+  position: relative;
+  padding-bottom: 35px; }
+  footer .copyrights {
+    padding-bottom: 50px; }
+    @media (min-width: 960px) {
+      footer .copyrights {
+        padding-bottom: 0; } }
+    footer .copyrights .center-text a, footer .copyrights header nav ul li a a, header nav ul li footer .copyrights a a, footer .copyrights .sub-header .row .col a, .sub-header .row footer .copyrights .col a, footer .copyrights .specials h1 a, .specials footer .copyrights h1 a, footer .copyrights .specials .tile.col a, .specials footer .copyrights .tile.col a, footer .copyrights .about-us .col h4 a, .about-us .col footer .copyrights h4 a, footer .copyrights .about-us .col p a, .about-us .col footer .copyrights p a, footer .copyrights .menu h4 a, .menu footer .copyrights h4 a, footer .copyrights .menu ul.categories li a, .menu ul.categories footer .copyrights li a, footer .copyrights .contact h4 a, .contact footer .copyrights h4 a, footer .copyrights .contact .contact-form .send-button a, .contact .contact-form footer .copyrights .send-button a {
+      color: red; }
+  footer .socials {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%); }
+    @media (min-width: 960px) {
+      footer .socials {
+        right: 100px;
+        bottom: 35px; } }
+    footer .socials div {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border: 1px solid #3c3c3c; }
+      footer .socials div:first-child {
+        margin-right: 12px; }
+      footer .socials div a img {
+        padding: 12px; }
